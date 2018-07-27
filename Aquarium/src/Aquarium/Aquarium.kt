@@ -1,19 +1,18 @@
 package Aquarium
 
-class Aquarium {
+class Aquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40) {
 
-    var width: Int = 20
-    var height: Int = 40
-    var length: Int = 100
-
-    var volume : Int
+    var volume: Int
         get() = width * height * length / 1000
-        set(value) {height = (value * 1000) / (width * length)}
+        set(value) {
+            height = (value * 1000) / (width * length)
+        }
 
-    fun volume() = width * height * length / 1000
+    var water = volume * 0.9
 
-    fun volumeOld(): Int {
-        return width * height * length / 1000
+    constructor(numberOfFish: Int) : this() {
+        val water: Int = numberOfFish * 2000
+        val tank: Double = water + water * 0.1
+        height = (tank / (length * width)).toInt()
     }
-
 }

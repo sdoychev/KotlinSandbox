@@ -1,5 +1,8 @@
 package Aquarium
 
+import Practice.SimpleSpice
+import Practice.Spice
+
 fun main(args: Array<String>) {
 
     buildAquarium()
@@ -9,16 +12,11 @@ fun main(args: Array<String>) {
 fun buildAquarium() {
 
     val myAquarium = Aquarium()
+    println("My Aquarium: ${myAquarium.volume} liters.")
 
-    println("Length: ${myAquarium.length} " +
-            "Width: ${myAquarium.width} " +
-            "Height: ${myAquarium.height} " +
-            "Volume: ${myAquarium.volume} ")
+    val smallAquarium = Aquarium(20, 15,30)
+    println("Small Aquarium: ${smallAquarium.volume} liters.")
 
-    myAquarium.volume = 60
-
-    println("Length: ${myAquarium.length} " +
-            "Width: ${myAquarium.width} " +
-            "Height: ${myAquarium.height} " +
-            "Volume: ${myAquarium.volume} ")
+    val myAquarium2 = Aquarium(numberOfFish = 9)
+    println("My Aquarium 2: ${myAquarium2.volume} liters.")
 }
