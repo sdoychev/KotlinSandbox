@@ -3,9 +3,15 @@ package Spice
 fun main(args: Array<String>) {
     val curry = Curry("Curry", "mild")
     println("${curry.name} has color ${curry.color}.")
+
+    val spiceCabinet = listOf(SpiceContainer(Curry("Yellow Curry", "mild")),
+            SpiceContainer(Curry("Red Curry", "medium")),
+            SpiceContainer(Curry("Green Curry", "spicy")))
+
+    for(element in spiceCabinet) println(element.label)
 }
 
-abstract class Spice(val name: String, val spiciness: String = "mild", color: SpiceColor) : SpiceColor by color {
+sealed class Spice(val name: String, val spiciness: String = "mild", color: SpiceColor) : SpiceColor by color {
 
     private val heat: Int
         get() {
@@ -43,9 +49,17 @@ interface Grinder {
 }
 
 interface SpiceColor {
-    val color: String
+    val color: Color
 }
 
 object YellowSpiceColor : SpiceColor {
-    override val color = "yellow"
+    override val color = Color.YELLOW
+}
+
+enum class Color(val rgb: Int) {
+    RED(0xFF0000), GREEN(0x00FF00), BLUE(0x0000FF), YELLOW(0xFFFF00);
+}
+
+data class SpiceContainer(var spice: Spice) {
+    val label = spice.name
 }
