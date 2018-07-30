@@ -1,11 +1,9 @@
 package Aquarium
 
-import Practice.SimpleSpice
-import Practice.Spice
-
 fun main(args: Array<String>) {
 
     buildAquarium()
+    makeFish()
 
 }
 
@@ -19,4 +17,19 @@ fun buildAquarium() {
 
     val myAquarium2 = Aquarium(numberOfFish = 9)
     println("My Aquarium 2: ${myAquarium2.volume} liters.")
+}
+
+fun makeFish() {
+    val shark = Shark()
+    val pleco = Plecostomus()
+
+    println("Shark: ${shark.color} \nPlecostomus: ${pleco.color}")
+
+    shark.eat()
+    pleco.eat()
+
+}
+
+fun feedFish(fish: FishAction) {
+    fish.eat()
 }
