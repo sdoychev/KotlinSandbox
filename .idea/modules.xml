@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Aquarium/Aquarium.iml" filepath="$PROJECT_DIR$/Aquarium/Aquarium.iml" />
       <module fileurl="file://$PROJECT_DIR$/KotlinSandbox.iml" filepath="$PROJECT_DIR$/KotlinSandbox.iml" />
     </modules>
   </component>
